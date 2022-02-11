@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const url = 'http://localhost:3200/users/login'
-// const url = 'https://login-with-pern.herokuapp.com/users/login'
+// const url = 'http://localhost:3200/users/login'
+const url = 'https://login-with-pern.herokuapp.com/users/login'
 
 function Login() {
   const [data, setData] = useState({
@@ -27,13 +27,12 @@ function Login() {
       email: data.email.toLowerCase().trim(),
       password: data.password1,
     }
-
     axios
       .post(url, body)
       .then((res: any) => {
-        console.log(res.data, 'this is the data')
-        console.log(res.header, 'this is header')
-        window.alert('Successfully logged in')
+        const result = JSON.stringify(res.data)
+        window.localStorage.setItem('user', result)
+        window.alert('Successfully registered')
         window.location.href = '/dashboard'
       })
       .catch((error: any) => {
