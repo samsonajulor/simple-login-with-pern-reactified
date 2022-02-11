@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import axios from 'axios'
 
 
-const url = 'http://localhost:3200/users'
-// const url = 'https://login-with-pern.herokuapp.com/users'
+// const url = 'http://localhost:3200/users'
+const url = 'https://login-with-pern.herokuapp.com/users'
 
 function Signup() {
 
