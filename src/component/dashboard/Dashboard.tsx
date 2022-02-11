@@ -13,7 +13,7 @@ function Dashboard() {
       <div className='images'></div>
 
       <div className='profile__textName'>
-        Welcome {user.data.firstname} {user.data.lasttname}
+        Welcome {user.data.firstname} {user.data.lastname}
       </div>
       <div className='profile__textDesc'>
         This is not your username or pin. This name will be visible to your

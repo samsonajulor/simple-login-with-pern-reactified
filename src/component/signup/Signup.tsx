@@ -41,8 +41,6 @@ const style = {
     axios
       .post(url, body)
       .then((res: any) => {
-        console.log(res.data, "this is the data");
-        console.log(res, 'this is res header')
         const result = JSON.stringify(res.data)
         window.localStorage.setItem('user', result)
        window.alert('Successfully registered')
@@ -58,7 +56,6 @@ const style = {
     const newdata: any = { ...data };
     newdata[e.target.id] = e.target.value;
     setData(newdata);
-    console.log(newdata);
   }
   return (
     <div>
