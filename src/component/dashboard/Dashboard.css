@@ -1,0 +1,72 @@
+
+
+/* .profile{
+ display: flex;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile__leftSection {
+  background: #f5fafc;
+  border-radius: 24px 0px 0px 24px;
+  /* flex: 0.25; */
+  /* padding: 2rem; */
+  z-index: -99;
+
+  padding: 2em;
+  text-align: center;
+}
+
+
+
+.profile__details {
+  color: #515974;
+  margin: 0px 24px;
+}
+.profile__detailsName {
+  margin-top: 280px;
+}
+.profile__text {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+.profile__textIcon {
+  background: #d5ece9;
+  border-radius: 4px;
+}
+.profile__textName {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242837;
+}
+.profile__textDesc {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 16px;
+  color: #9796a5;
+  margin: 12px 0px;
+}
+.profile__textAbout {
+  font-family: Plus Jakarta Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242837;
+}
+.images{
+  background-color: #515974;
+  width: 100%;
+  border: 10px solid black;
+}
