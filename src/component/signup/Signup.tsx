@@ -8,11 +8,13 @@ const url = 'http://localhost:3200/users'
 function Signup() {
 
     const [data, setData] = useState({
-      name: '',
+      firstname: '',
+      lastname: '',
       email: '',
       password1: '',
       password2: ''
     })
+
 
 const style = {
     color: "#5E54A4",
@@ -30,7 +32,8 @@ const style = {
     if (data.password1 !== data.password2) window.alert('Password do not match')
     
     const body = {
-      name: data.name.toLowerCase().trim(),
+      firstname: data.firstname.toLowerCase().trim(),
+      lastname: data.lastname.toLowerCase().trim(),
       email: data.email.toLowerCase().trim(),
       password: data.password1,
     };
@@ -39,13 +42,15 @@ const style = {
       .post(url, body)
       .then((res: any) => {
         console.log(res.data, "this is the data");
-      window.
+        console.log(res, 'this is res header')
+        const result = JSON.stringify(res.data)
+        window.localStorage.setItem('user', result)
        window.alert('Successfully registered')
        window.location.href = '/dashboard'
       })
       .catch((error:any) => {
           console.log(error)
-        window.alert('unsuccessful registration')
+        window.alert('unsuccessful registration user may already please exist try to login with your pw')
       });
   }
 
@@ -91,14 +96,28 @@ const style = {
 
               <div className='mb-3'>
                 <label htmlFor='exampleInputEmail1' className='form-label'>
-                  Name
+                  Firstname
                 </label>
                 <input
                   onChange={(e) => handle(e)}
-                  value={data.name}
-                  type='name'
-                  name='name'
-                  id='name'
+                  value={data.firstname}
+                  type='firstname'
+                  name='firstname'
+                  id='firstname'
+                  className='form-control'
+                  required
+                />
+              </div>
+              <div className='mb-3'>
+                <label htmlFor='exampleInputEmail1' className='form-label'>
+                Lastname
+                </label>
+                <input
+                  onChange={(e) => handle(e)}
+                  value={data.lastname}
+                  type='lastname'
+                  name='lastname'
+                  id='lastname'
                   className='form-control'
                   required
                 />
